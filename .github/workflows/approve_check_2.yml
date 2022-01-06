@@ -6,7 +6,7 @@ jobs:
   approve-check:
     runs-on: ubuntu-latest
     steps:
-    - uses: 4835/pr_approve_check_action@1.0.0
+    - uses: 4835/pr_approve_check_action@1.0.1
       with:
         min-approval: ${{ github.event.pull_request.requested_reviewers }}
         github-token: ${{ secrets.GITHUB_TOKEN }}
