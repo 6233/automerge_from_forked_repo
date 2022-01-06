@@ -10,7 +10,7 @@ jobs:
       - name : Check Approve
         uses : 4835/pr_approve_check_action@1.0.2
         with:
-          min-approval: 1
+          min-approval: 2
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name : Save PR number
