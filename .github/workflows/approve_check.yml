@@ -1,23 +1,23 @@
-# name: approve check
+name: approve check
 on:
   pull_request_review:
     types: [submitted]
-# jobs:
-#   pr-automerge:
-#     if: github.event.review.state == 'approved'
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name : Save PR number
-#         run  : |
-#           mkdir -p ./pr
-#           echo ${{ github.server_url }}/${{ github.repository }}/pull/$PR_NUMBER > ./pr/NR
-#         env :
-#           PR_NUMBER: ${{ github.event.pull_request.number }}
-#       - uses: actions/upload-artifact@v2
-#         with:
-#           name: pr
-#           path: pr/
+jobs:
+  pr-automerge:
+    if: github.event.review.state == 'approved'
+    runs-on: ubuntu-latest
+    steps:
+      - name : Save PR number
+        run  : |
+          mkdir -p ./pr
+          echo ${{ github.server_url }}/${{ github.repository }}/pull/$PR_NUMBER > ./pr/NR
+        env :
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+      - uses: actions/upload-artifact@v2
+        with:
+          name: pr
+          path: pr/
           
-#       - name: PR approved
-#         run: |
-#           echo "PR approved" 
+      - name: PR approved
+        run: |
+          echo "PR approved" 
