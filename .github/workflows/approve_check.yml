@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name : Check Approve
-        uses : 4835/pr_approve_check_action@1.0.7
+        uses : 4835/pr_approve_check_action@1.0.8
         with:
           min-approval: 1
           github-token: ${{ secrets.GITHUB_TOKEN }}
