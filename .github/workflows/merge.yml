@@ -37,3 +37,11 @@ jobs:
           gh pr merge --auto --merge "$(cat ./NR)"
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+  end-notification:
+    needs: pr-automerge
+    runs-on: ubuntu-latest
+    steps:
+      - name : echo-success
+        run: echo "success!!"
+      
